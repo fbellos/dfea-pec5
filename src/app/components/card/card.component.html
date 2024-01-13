@@ -1,0 +1,11 @@
+<mat-card class="card list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
+    <mat-card-header>
+        <mat-card-title [routerLink]="['/item', card.id]">{{ card.id }} - {{ card.author }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [routerLink]="['/item', card.id]" src="{{ card.download_url }}" alt="Photo">
+    <mat-card-content class="card-content">
+        <a [href]="card.url">
+            <mat-icon>visibility</mat-icon> Ver enlace
+        </a>
+    </mat-card-content>
+</mat-card>

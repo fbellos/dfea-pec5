@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <a *ngFor="let image  of items" [routerLink]="['/item', image.id]" class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
+        {{ image.id }} - {{ image.author }}
+    </a>
+</ul>
