@@ -11,13 +11,17 @@ export class ListItemComponent implements OnInit {
 
   items: ImageDTO[] = [];
   selectedView: string = 'cards';
+  loading = true;
 
   constructor(private imagesService: ImagesService) {}
 
   ngOnInit(): void {
     this.imagesService
     .getAllItems()
-    .subscribe((images) => this.items = images);
+    .subscribe((images) => {
+      this.items = images;
+      this.loading = false;
+    });
   }
 
 }

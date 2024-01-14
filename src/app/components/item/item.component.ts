@@ -11,7 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ItemComponent implements OnInit{
 
   item!: ImageDTO;
-  panelOpenState = false;
+  panelOpenState: boolean = false;
+  loading: boolean = true;
 
   constructor(
     private imagesService: ImagesService,
@@ -33,6 +34,7 @@ export class ItemComponent implements OnInit{
 
       this.item = image;
       console.log('Image -->', this.item);
+      this.loading = false;
       return null;
     });
   }
